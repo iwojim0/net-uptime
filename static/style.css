@@ -106,11 +106,11 @@ button {
 }
 
 .service-ping-excellent {
-    background-color: skyblue;
+    background-color: lime;
 }
 
 .service-ping-good {
-    background-color: greenyellow;
+    background-color: skyblue;
 }
 
 .service-ping-normal {
@@ -133,13 +133,13 @@ button {
 }
 
 .chart-item-excellent {
-    background-color: skyblue;
-    color: skyblue;
+    background-color: lime;
+    color: lime;
 }
 
 .chart-item-good {
-    background-color: greenyellow;
-    color: greenyellow;
+    background-color: skyblue;
+    color: skyblue;
 }
 
 .chart-item-normal {

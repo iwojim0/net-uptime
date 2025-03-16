@@ -1,5 +1,6 @@
 import pingers.icmp_pinger
 import pingers.tcp_pinger
+import pingers.tcp_socks_pinger
 import pingers.mc_pinger
 
 import copy
@@ -11,7 +12,7 @@ class Pinger:
         self.services = config.get_services()
 
         for service in self.services:
-            service["history"] = []
+            service["history"] = [0]*42
 
     def get_values (self):
         return {"services": self.cached}
@@ -24,6 +25,8 @@ class Pinger:
             return pingers.icmp_pinger.ping(service["address"])
         elif service["connection"] == "minecraft":
             return pingers.mc_pinger.ping(service["address"], service["port"])
+        if service["connection"] == "tcp_socks":
+            return pingers.tcp_socks_pinger.ping(service["address"], service["port"], service["socks_proxy"])
 
     def ping_all (self):
         print("Pinging all...")

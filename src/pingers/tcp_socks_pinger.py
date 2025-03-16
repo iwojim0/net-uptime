@@ -1,7 +1,7 @@
-from tcp_latency import measure_latency
+import subprocess
 
-def ping (address, port):
-    ping = measure_latency(host=address, port=port, runs=1, timeout=2.5)[0]
+def ping (address, port, socks_proxy):
+    ping = subprocess.check_call(['/net-uptime/src/pingers/test.sh', address, port, socks_proxy])
     is_alive = True
 
     if ping == None:
