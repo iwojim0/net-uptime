@@ -63,7 +63,7 @@ function addService (service) {
 
             <div class="service-footer">
                 ${ connection.includes("minecraft") && is_alive ? ' <span class="service-ping player-count">' + result.players + "/" + result.max_players + '</span>' : "" } 
-                <a href="https://${address}">${address}</a> at port ${port}
+                <a href="http://${address}">${address}</a> at port ${port}
             </div>
         </div>
     `;
