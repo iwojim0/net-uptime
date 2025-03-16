@@ -1,14 +1,14 @@
 import subprocess
 
 def ping (address, port, socks_proxy):
-    ping = subprocess.check_call(['/net-uptime/src/pingers/test.sh', address, port, socks_proxy])
-    is_alive = True
-
+    ping = subprocess.run(['/net-uptime/src/pingers/test.sh', str(address), str(port), str(socks_proxy)], capture_output=True, text=True)
+    is_alive = True                                                                                                                      
+                                                                                
     if ping == None:
-        ping = -1
+        ping = -1   
         is_alive = False
-
-    return {
-        "ping": int(float(ping)),
-        "is_alive": is_alive
+                        
+    return {            
+        "ping": int(float(ping.stdout)),
+        "is_alive": is_alive            
     }
