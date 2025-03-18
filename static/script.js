@@ -7,15 +7,15 @@ function getColorFromPing (ping) {
         return "dead"
     }
     
-    else if (ping < 150) {
+    else if (ping < 150*10) {
         return "excellent"
     } 
     
-    else if (ping < 300) {
+    else if (ping < 300*10) {
         return "good"
     }
 
-    else if (ping < 450) {
+    else if (ping < 450*10) {
         return "normal"
     } 
     
