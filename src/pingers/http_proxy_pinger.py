@@ -1,26 +1,23 @@
 import pycurl
-import io
+from io import BytesIO
+import time
 
 def ping (address, port, http_proxy):
-  output = io.BytesIO()
-  url='http://'+address+':'+port
+  output = BytesIO()
+  url='http://'+str(address)+':'+str(port)
 
   query = pycurl.Curl()
   query.setopt(pycurl.URL, url)
   query.setopt(pycurl.PROXY, http_proxy)
   query.setopt(pycurl.PROXYTYPE, pycurl.PROXYTYPE_HTTP)
-  query.setopt(pycurl.WRITEFUNCTION, output.write)
-
-  try:
-    query.perform()
-#    return output.getvalue()
-    print(output.getvalue())
-  except pycurl.error as exc:
-#    return "Unable to reach %s (%s)" % (url, exc)
-    print("Unable to reach %s (%s)" % (url, exc))
+  query.setopt(query.HEADER, 1)
+  query.setopt(query.NOBODY, 1) # header only, no body
+  t1=time.time_ns()
+  query.perform()
   query.close()
+  t2=time.time_ns()
 
-  ping = 10
+  ping=int((t2-t1)/1000000)
   is_alive = True
 
   if ping == None:
