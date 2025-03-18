@@ -13,7 +13,7 @@ socat -t 2 stdio SOCKS4A:"$SOCKS_HOST":"$TEST_HOST":"$TEST_PORT",socksport="$SOC
 > /allout.txt 2>&1;\
 cat /allout.txt | grep fail|wc -l`
 s2=`adjtimex | grep -i tv|awk -F" " '{print $2}'|sed ':a;N;$!ba;s/\n//g'`
-[ "$r" == 1 ] && ping_test=10000 || ping_test=$(bc -l <<< $((s2-s1))/100000000)
+[ "$r" == 1 ] && ping_test=10000 || ping_test=$(bc -l <<< $((s2-s1))/1000000)
 ping_int=$(printf "%.0f" "$ping_test")
 
 if [ "$ping_int" -lt 0 ] || [ "$ping_int" -gt 1000000 ]; then
