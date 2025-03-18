@@ -10,8 +10,9 @@ def ping (address, port, http_proxy):
   query.setopt(pycurl.URL, url)
   query.setopt(pycurl.PROXY, http_proxy)
   query.setopt(pycurl.PROXYTYPE, pycurl.PROXYTYPE_HTTP)
-  query.setopt(query.HEADER, 1)
-  query.setopt(query.NOBODY, 1) # header only, no body
+  query.setopt(pycurl.HEADER, 1)
+  query.setopt(pycurl.NOBODY, 1) # header only, no body
+  query.setopt(pycurl.WRITEDATA, output)
   t1=time.time_ns()
   query.perform()
   query.close()
