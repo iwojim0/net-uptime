@@ -1,6 +1,7 @@
 import pingers.icmp_pinger
 import pingers.tcp_pinger
 import pingers.tcp_socks_pinger
+import pingers.http_proxy_pinger
 import pingers.mc_pinger
 
 import copy
@@ -27,6 +28,8 @@ class Pinger:
             return pingers.mc_pinger.ping(service["address"], service["port"])
         if service["connection"] == "tcp_socks":
             return pingers.tcp_socks_pinger.ping(service["address"], service["port"], service["socks_proxy"])
+        if service["connection"] == "http_proxy":
+            return pingers.tcp_socks_pinger.ping(service["address"], service["port"], service["http_proxy"])
 
     def ping_all (self):
         print("Pinging all...")

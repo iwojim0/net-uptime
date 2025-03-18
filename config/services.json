@@ -25,6 +25,24 @@
             "connection": "tcp",
             "description": "Server website",
             "icon": "https://www.valerte.com/images/valerte/web-1.png"
+        },
+        {
+            "name": "Port over socks",
+            "address": "127.0.0.1",
+            "port": 80,
+            "connection": "tcp_socks",
+            "socks_proxy": "127.0.0.1:9050",
+            "description": "Check server port over socks proxy",
+            "icon": "/icon.png"
+        },
+        {
+            "name": "Host over http proxy",
+            "address": "127.0.0.1",
+            "port": 80,
+            "connection": "http_proxy",
+            "socks_proxy": "127.0.0.1:8118",
+            "description": "Check server port over http proxy",
+            "icon": "/icon.png"
         }
     ]
 }

@@ -11,6 +11,6 @@
     },
 
     "monitor": {
-        "check_interval": 5
+        "check_interval": 10
     }
 }
