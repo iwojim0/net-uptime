@@ -10,6 +10,8 @@ Net Uptime is a real-time network monitor which allows you to send pings every c
 3. Requests (PIP)
 4. tcp-latency (PIP)
 5. icmplib (PIP)
+6. socat (for socks_proxy check)
+7. pycurl (for http_proxy check)
 
 ## Deployment
 Download, Extract and Modify the app.json file inside the config directory to modify the website settings and then modify the services.json file to list your services.  

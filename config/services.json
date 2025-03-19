@@ -33,7 +33,6 @@
             "connection": "tcp_socks",
             "socks_proxy": "127.0.0.1:9050",
             "description": "Check server port over socks proxy",
-            "stat": 0,
             "icon": "/icon.png"
         },
         {
@@ -43,7 +42,6 @@
             "connection": "http_proxy",
             "socks_proxy": "127.0.0.1:8118",
             "description": "Check server port over http proxy",
-            "stat": 0,
             "icon": "/icon.png"
         }
     ]
