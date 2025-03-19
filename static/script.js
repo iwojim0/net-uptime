@@ -1,21 +1,25 @@
 function getColorFromPing (ping) {
-    if ((ping != 0 && ping == null)||(ping == 0)) {
+    if ((ping != 0 && ping == null)) {
         return "nodata"
     }
 
+    else if (ping == 0) {
+        return "excellent"
+    }
+    
     else if (ping < 0) {
         return "dead"
     }
     
-    else if (ping < 150*2) {
+    else if (ping < 150*10) {
         return "excellent"
     } 
     
-    else if (ping < 300*2) {
+    else if (ping < 300*10) {
         return "good"
     }
 
-    else if (ping < 450*4) {
+    else if (ping < 450*10) {
         return "normal"
     } 
     

@@ -121,6 +121,11 @@ button {
     background-color: red;
 }
 
+.service-ping-nodata {
+    background-color: rgb(173, 173, 173);
+}
+
+
 .service-footer {
     color: #333;
     margin-top: 10px;
