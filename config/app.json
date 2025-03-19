@@ -1,12 +1,12 @@
 {
     "app": {
-        "name": "Your Server Name",
+        "name": "Iwojima stats server",
         "description": "Real-time microservices status monitor for ArkFlame Network.",
         "icon": "/icon.png"
     },
 
     "security": {
-        "hide_ports": true,
+        "hide_ports": false,
         "hide_address": false
     },
 

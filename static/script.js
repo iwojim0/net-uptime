@@ -1,5 +1,5 @@
 function getColorFromPing (ping) {
-    if (ping != 0 && ping == null) {
+    if ((ping != 0 && ping == null)||(ping == 0)) {
         return "nodata"
     }
 
@@ -7,15 +7,15 @@ function getColorFromPing (ping) {
         return "dead"
     }
     
-    else if (ping < 150*10) {
+    else if (ping < 150*2) {
         return "excellent"
     } 
     
-    else if (ping < 300*10) {
+    else if (ping < 300*2) {
         return "good"
     }
 
-    else if (ping < 450*10) {
+    else if (ping < 450*4) {
         return "normal"
     } 
     
@@ -35,6 +35,13 @@ function addService (service) {
     const { ping, is_alive } = result;
     const color = getColorFromPing(ping);
     const chart = [];
+    
+    if ( ping > 1000 ) {
+        str_ping = ping/1000 + "s"
+    }
+    else {
+        str_ping = ping + "ms"
+    }
 
     for (let i = 0; i < 42; i++) {
         let item = history[i].ping;
@@ -43,14 +50,14 @@ function addService (service) {
             <div class="chart-item chart-item-${getColorFromPing(item)}">.</div>
         `)
     }                    
-
+    
     const el = `
         <div class="service">
             <div class="service-header">
                 <img src="${icon}" alt="${name} service icon" class="service-icon"/>
                 <div class="service-presentation">
                     <span class="service-name">${name}</span>
-                    <span class="service-ping service-ping-${color}">${ is_alive ? ping == 0 ? "ONLINE" : ping + "ms" : "DEAD"}</span>
+                    <span class="service-ping service-ping-${color}">${ is_alive ? ping == 0 ? "ONLINE" : str_ping : "DEAD"}</span>
                     <p>
                         ${description}
                     </p>

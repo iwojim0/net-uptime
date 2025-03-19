@@ -29,7 +29,7 @@ class Pinger:
         if service["connection"] == "tcp_socks":
             return pingers.tcp_socks_pinger.ping(service["address"], service["port"], service["socks_proxy"])
         if service["connection"] == "http_proxy":
-            return pingers.http_proxy_pinger.ping(service["address"], service["port"], service["http_proxy"])
+            return pingers.http_proxy_pinger.ping(service["address"], service["port"], service["http_proxy"], service["stat"])
 
     def ping_all (self):
         print("Pinging all...")
