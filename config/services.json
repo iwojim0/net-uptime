@@ -1,118 +1,48 @@
 {
     "services": [
         {
-            "name": "iwojimagz.onion",
-            "address": "iwojimagzktuisvveh6zjuv453wm6rnch6oefof66mt7nuoxn4nliwqd.onion",
+            "name": "Minecraft (Proxy)",
+            "address": "mc.arkflame.com",
+            "port": 25565,
+            "connection": "minecraft",
+            "description": "Reverse proxy",
+            "icon": "https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/GrassBlock_HighRes.png"
+        },
+
+        {
+            "name": "Minecraft (Spigot)",
+            "address": "127.0.0.1",
+            "port": 25566,
+            "connection": "minecraft",
+            "description": "This is the spigot Server",
+            "icon": "https://www.minecraft.net/etc.clientlibs/minecraft/clientlibs/main/resources/img/GrassBlock_HighRes.png"
+        },
+
+        {
+            "name": "Web",
+            "address": "127.0.0.1",
             "port": 80,
-            "connection": "http_proxy",
-            "http_proxy": "10.0.0.25:8118",
-            "description": "mitra fediverse server in tor",
-            "stat": 0,
-            "icon": "http://iwojimagzktuisvveh6zjuv453wm6rnch6oefof66mt7nuoxn4nliwqd.onion/favicon.ico"
+            "connection": "tcp",
+            "description": "Server website",
+            "icon": "https://www.valerte.com/images/valerte/web-1.png"
         },
         {
-            "name": "iwojimasiq.i2p",
-            "address": "iwojimasiqb4ze7mccgk5oapgfjj2txdevcnn3vskoo2chy5rxta.b32.i2p",
+            "name": "Port over socks",
+            "address": "127.0.0.1",
             "port": 80,
-            "connection": "http_proxy",
-            "http_proxy": "10.0.0.25:8118",
-            "description": "snac2 fediverse server in i2p",
-            "stat": 0,
-            "icon": "http://iwojimasiqb4ze7mccgk5oapgfjj2txdevcnn3vskoo2chy5rxta.b32.i2p/favicon.ico"
-        },
-        {
-            "name": "pwmangband.onion",
-            "address": "iwojima7cnn53jitsig4xjd23lchircbnu4yzuajdsclchiu3j2dbjad.onion",
-            "port": 18346,
             "connection": "tcp_socks",
-            "socks_proxy": "10.0.0.25:9050",
-            "description": "pwmangband 1.6.1-build-1 server in tor",
+            "socks_proxy": "127.0.0.1:9050",
+            "description": "Check server port over socks proxy",
             "stat": 0,
-            "icon": "/pwmangband.png"
+            "icon": "/icon.png"
         },
         {
-            "name": "pwmangband.i2p",
-            "address": "iwojimabxbn4r66e5c23tg7gur4bwyfn4lh3vo5ahrouaqgyvyca.b32.i2p",
-            "port": 18346,
-            "connection": "tcp_socks",
-            "socks_proxy": "10.0.0.25:4447",
-            "description": "pwmangband 1.6.1-build-1 server in i2p",
-            "stat": 0,
-            "icon": "/pwmangband.png"
-        },
-        {
-            "name": "Ulima Online.i2p",
-            "address": "iwgbbjqgd5tlfbd63a67ytwnpz337j7ktmdznsvfpnmntpuhhoyq.b32.i2p",
-            "port": 2593,
-            "connection": "tcp_socks",
-            "socks_proxy": "10.0.0.25:4447",
-            "description": "RunUO server in i2p",
-            "stat": 0,
-            "icon": "/uo.png"
-        },
-
-        {
-            "name": "blogs.iwojimagz.onion",
-            "address": "blogs.iwojimagzktuisvveh6zjuv453wm6rnch6oefof66mt7nuoxn4nliwqd.onion",
+            "name": "Host over http proxy",
+            "address": "127.0.0.1",
             "port": 80,
             "connection": "http_proxy",
-            "http_proxy": "10.0.0.25:8118",
-            "description": "writefreely fediverse blog in tor",
-            "stat": 0,
-            "icon": "http://blogs.iwojimagzktuisvveh6zjuv453wm6rnch6oefof66mt7nuoxn4nliwqd.onion/favicon.ico"
-        },
-
-        {
-            "name": "fedichan.iwojimafy.i2p",
-            "address": "iwojimafy6sxclfall2ixzyuq2xcdbqj3tlxgi46ik3ssigxz7fa.b32.i2p",
-            "port": 80,
-            "connection": "http_proxy",
-            "http_proxy": "10.0.0.25:8118",
-            "description": "federated anonymous image board in i2p",
-            "stat": 0,
-            "icon": "/fchan.png"
-        },
-
-        {
-            "name": "fedichan.iwojima7cnn.onion",
-            "address": "iwojima7cnn53jitsig4xjd23lchircbnu4yzuajdsclchiu3j2dbjad.onion",
-            "port": 80,
-            "connection": "http_proxy",
-            "http_proxy": "10.0.0.25:8118",
-            "description": "federated anonymous image board in tor",
-            "stat": 0,
-            "icon": "/fchan.png"
-        },
-
-        {
-            "name": "fedichan.iwo7pmogm3.loki",
-            "address": "fchan.iwo7pmogm3jrebbhk58kucyhxcu7edgjpm38nxaeankhx1785s4o.loki",
-            "port": 80,
-            "connection": "http_proxy",
-            "http_proxy": "10.0.0.25:8118",
-            "description": "federated anonymous image board in lokinet",
-            "stat": 0,
-            "icon": "/fchan.png"
-        },
-
-        {
-            "name": "iwo7pmogm3.loki",
-            "address": "iwo7pmogm3jrebbhk58kucyhxcu7edgjpm38nxaeankhx1785s4o.loki",
-            "port": 80,
-            "connection": "http_proxy",
-            "http_proxy": "10.0.0.25:8118",
-            "description": "snac2 fediverse server in lokinet",
-            "stat": 0,
-            "icon": "http://iwo7pmogm3jrebbhk58kucyhxcu7edgjpm38nxaeankhx1785s4o.loki/favicon.ico"
-        },
-
-        {
-            "name": "id-tools search tor",
-            "address": "search.iwojimagzktuisvveh6zjuv453wm6rnch6oefof66mt7nuoxn4nliwqd.onion",
-            "port": 80,
-            "connection": "http_proxy",
-            "http_proxy": "10.0.0.25:8118",
-            "description": "id-tools search tor",
+            "socks_proxy": "127.0.0.1:8118",
+            "description": "Check server port over http proxy",
             "stat": 0,
             "icon": "/icon.png"
         }
